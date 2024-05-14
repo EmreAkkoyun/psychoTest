@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: ['java', 'python', 'javascript']  # Adjust these to match your project's languages
+        language: ['python']  # Adjust these to match your project's languages
 
     steps:
     - name: Checkout repository
