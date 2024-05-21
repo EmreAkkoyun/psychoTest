@@ -23,17 +23,17 @@ async def docs():
 
 
 #vulnerable code.
-@app.get("/run")
-async def run_command(command: str = Query(default=None, description="The command to execute")):
-    if command:
-        # Vulnerable: executing a command directly from user input
-        process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-        stdout, stderr = process.communicate()
-        if process.returncode == 0:
-            return {"output": stdout}
-        else:
-            return {"error": stderr}
-    return {"error": "No command provided"}
+# @app.get("/run")
+# async def run_command(command: str = Query(default=None, description="The command to execute")):
+#     if command:
+#         # Vulnerable: executing a command directly from user input
+#         process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+#         stdout, stderr = process.communicate()
+#         if process.returncode == 0:
+#             return {"output": stdout}
+#         else:
+#             return {"error": stderr}
+#     return {"error": "No command provided"}
 
 # if __name__ == "__main__":
 #     import uvicorn
